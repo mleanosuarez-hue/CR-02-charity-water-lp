@@ -196,3 +196,44 @@ section {
     width: 300px;
   }
 }
+
+/* --- Game styles --- */
+.screen { display: none; }
+.screen.active { display: block; }
+.container { max-width: 720px; margin: 0 auto; padding: 28px; }
+.title { font-size: 2rem; text-align: center; margin: 8px 0; }
+.subtitle { text-align: center; color: #555; margin-bottom: 18px; }
+.button-area { text-align: center; margin-top: 18px; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; cursor: pointer; margin: 6px; }
+.btn.primary { background: #2E9DF7; color: white; border: none; }
+.btn.secondary { background: transparent; color: #2E9DF7; border: 2px solid #2E9DF7; }
+
+.hud { display:flex; gap:16px; align-items:center; padding:12px; background:rgba(255,255,255,0.9); box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+.hud-item { display:flex; align-items:center; gap:8px; }
+.hydration-bar { width:160px; height:12px; background:#e6f3ff; border-radius:8px; overflow:hidden; }
+.hydration-fill { height:100%; width:100%; background:linear-gradient(90deg,#2E9DF7,#8BD1CB); transition:width 0.2s ease; }
+
+.game-area { position:relative; height:calc(100vh - 220px); max-height:760px; min-height:420px; background: linear-gradient(#eaf8ff,#f4fbff); margin:18px 18px 36px; border-radius:12px; overflow:hidden; }
+.game-screen { position: relative; }
+
+/* Position the instruction/message box lower so drops have more vertical space */
+#messageBox { position: absolute; left: 50%; transform: translateX(-50%); bottom: 18px; width: calc(100% - 48px); max-width: 720px; background: rgba(255,255,255,0.92); padding: 10px 14px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); z-index: 25; text-align:center; font-weight:700; }
+
+/* Ensure game screen container is positioned for absolute children */
+#gameScreen { position: relative; padding-bottom: 90px; }
+.drop { position:absolute; top:-80px; width:64px; height:76px; display:flex; align-items:center; justify-content:center; cursor:pointer; user-select:none; pointer-events:auto; }
+.drop svg { width:100%; height:100%; display:block; }
+.drop.clean { filter: drop-shadow(0 6px 12px rgba(46,157,247,0.24)); }
+.drop.dirty { filter: drop-shadow(0 6px 12px rgba(29,154,89,0.16)); }
+
+@keyframes fall {
+  from { transform: translateY(-60px); }
+  to { transform: translateY(620px); }
+}
+
+.drop.falling { animation-name: fall; animation-timing-function: linear; }
+
+.message-box { text-align:center; padding:10px; font-weight:600; }
+.branding-corner { position:absolute; right:12px; bottom:12px; opacity:0.9; }
+.logo { max-width:140px; }
+.logo-small { width:48px; }

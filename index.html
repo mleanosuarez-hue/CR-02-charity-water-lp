@@ -1,47 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thirst Mode</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <!-- HOME SCREEN -->
+  <div id="homeScreen" class="screen active">
+    <div class="container">
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
+      <h1 class="title">💧 THIRST MODE 💧</h1>
+      <p class="subtitle">Survive as long as you can!</p>
+
+      <div class="instructions">
+        <h2>How to Play</h2>
+        <p>💧 Click clean water drops to stay hydrated.</p>
+        <p>🤢 Avoid dirty drops or you lose hydration!</p>
+        <p>⏱️ Survive as long as possible.</p>
+      </div>
+
+      <div class="button-area">
+        <button id="startBtn" class="btn primary">Start Game</button>
+        <a href="https://www.charitywater.org" target="_blank" class="btn secondary">
+          Learn More
+        </a>
+      </div>
+
+      <div class="branding">
+        <p>Powered by</p>
+        <img src="img/cw_logo.png" alt="charity: water logo" class="logo">
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- GAME SCREEN -->
+  <div id="gameScreen" class="screen">
+    
+    <!-- TOP HUD -->
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-label">Hydration:</span>
+        <div class="hydration-bar">
+          <div id="hydrationFill" class="hydration-fill"></div>
         </div>
-    </section>
+        <span id="hydrationText">100%</span>
+      </div>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+      <div class="hud-item">
+        ⏱ Time: <span id="timeText">0</span>s
+      </div>
+
+      <div class="hud-item">
+        ⭐ Score: <span id="scoreText">0</span>
+      </div>
+    </div>
+
+    <!-- GAME AREA -->
+    <div id="gameArea" class="game-area">
+      <!-- Drops will spawn here later using JavaScript -->
+    </div>
+
+    <!-- MESSAGE BOX -->
+    <div id="messageBox" class="message-box">
+      Click the clean drops to survive!
+    </div>
+
+    <!-- SMALL BRANDING CORNER -->
+    <div class="branding-corner">
+      <img src="img/cw_logo.png" alt="charity: water logo" class="logo-small">
+    </div>
+
+  </div>
+
 </body>
+  <script src="game.js" defer></script>
 </html>
